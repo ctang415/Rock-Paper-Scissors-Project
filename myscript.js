@@ -1,43 +1,44 @@
 const gameChoices = ['Rock', 'Paper', 'Scissors'];
 
+
 function getComputerChoice() {
     return gameChoices[Math.floor(Math.random() * gameChoices.length)];
 };
 
-function playRound (playerSelection, computerSelection) {
+
+function playRound() {
+    let playerSelection = prompt('Rock, paper, or scissors?').toLowerCase();
+    let computerSelection = getComputerChoice().toLowerCase();
     if (playerSelection === computerSelection){
-        return "It's a tie."
+        console.log("It's a tie.")
     }
     else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-            return "You win! Rock beats scissors."
+        console.log("You win! Rock beats scissors.")
     }
     else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        return "You win! Scissors beats paper."
+        console.log("You win! Scissors beats paper.")
     }
     else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        return "You lose! Paper beats rock."
+        console.log("You lose! Paper beats rock.")
     }
     else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        return "You lose! Rock beats scissors."
+        console.log("You lose! Rock beats scissors.")
     }
     else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        return "You win! Paper beats rock."
+        console.log("You win! Paper beats rock.")
     }
-    else {
-        return "You lose! Scissors beats paper."
+    else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        console.log("You lose! Scissors beats paper.")
     }   
     
 };
-const computerSelection = getComputerChoice().toLowerCase();
-const playerSelection = prompt('Rock, paper, or scissors?').toLowerCase();
 
 
-console.log(playRound(playerSelection, computerSelection));
-
-function game(playRound) {
-    for(let i = 0; i< 5; i++) {
-        const playerWins = 0;
-        const computerWins = 0;
+function game() {
+    let playerWins = 0;
+    let computerWins = 0;
+    for (let i = 0; i< 5; i++) {
+    console.log(playRound(i));
     }
+}
 
-};
