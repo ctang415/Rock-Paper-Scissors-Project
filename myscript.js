@@ -11,7 +11,7 @@ function playRound() {
     let playerSelection = prompt('Rock, paper, or scissors?').toLowerCase();
     let computerSelection = getComputerChoice().toLowerCase();
     if (playerSelection === computerSelection){
-        return `It\'s a tie. Score is ${playerWins} to ${computerWins}`
+        return `It\'s a draw. Score is ${playerWins} to ${computerWins}`
     }
     else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         ++playerWins;
