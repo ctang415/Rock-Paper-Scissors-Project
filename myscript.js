@@ -40,21 +40,23 @@ function playRound() {
     
 };
 
-
 function game() {
     for (let i = 0; i< 5; i++) {
         console.log(playRound(i));
-}
+    }
      if (playerWins > computerWins) {
-        return `You won with ${playerWins} wins.`
+        console.log(`You won the game with ${playerWins} wins.`)
+        return endGame();
     }
     else if (computerWins > playerWins) {
-        return `You lost. Computer wins with ${computerWins} wins.`
+        console.log(`You lost the game. Computer wins with ${computerWins} wins.`)
+        return endGame();
     }
     else {
-        return `No one wins. It's a tie game at ${playerWins} to ${computerWins}.`
-        }
-};
+        console.log(`No one wins the game. It's a tie at ${playerWins} to ${computerWins}.`)
+        return endGame();
+    }
+}
 
 function endGame() {
     computerWins = 0;
