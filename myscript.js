@@ -1,15 +1,37 @@
-const gameChoices = ['Rock', 'Paper', 'Scissors'];
 
+
+const rock = document.getElementById('rock');
+
+rock.addEventListener('click', function() { 
+    playerSelection= 'rock';
+    let computerSelection = getComputerChoice().toLowerCase();
+    playRound(playerSelection, computerSelection);
+});
+
+const paper = document.getElementById('paper');
+paper.addEventListener('click', function() {
+    playerSelection = 'paper';
+    let computerSelection = getComputerChoice().toLowerCase();
+    playRound(playerSelection, computerSelection);
+});
+
+const scissors = document.getElementById('scissors');
+scissors.addEventListener('click', function() {
+    playerSelection = 'scissors';
+    let computerSelection = getComputerChoice().toLowerCase();
+    playRound(playerSelection, computerSelection);
+});
 
 function getComputerChoice() {
+    const gameChoices = ['Rock', 'Paper', 'Scissors'];
     return gameChoices[Math.floor(Math.random() * gameChoices.length)];
 };
 let playerWins = 0;
 let computerWins = 0;
 
-function playRound() {
-    let playerSelection = prompt('Rock, paper, or scissors?').toLowerCase();
-    let computerSelection = getComputerChoice().toLowerCase();
+let playerSelection ='';
+
+function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection){
         return `It's a draw. Score is ${playerWins} to ${computerWins}.`
     }
@@ -41,9 +63,7 @@ function playRound() {
 };
 
 function game() {
-    for (let i = 0; i< 5; i++) {
         console.log(playRound(i));
-    }
      if (playerWins > computerWins) {
         console.log(`You won the game with ${playerWins}.`)
         return endGame();
