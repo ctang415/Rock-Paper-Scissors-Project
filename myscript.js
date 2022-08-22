@@ -3,64 +3,78 @@
 const rock = document.getElementById('rock');
 
 rock.addEventListener('click', function() { 
-    playerSelection= 'rock';
-    let computerSelection = getComputerChoice().toLowerCase();
-    playRound(playerSelection, computerSelection);
+    let playerSelection = 'rock';
+    playRound(playerSelection);
 });
 
 const paper = document.getElementById('paper');
+
 paper.addEventListener('click', function() {
-    playerSelection = 'paper';
-    let computerSelection = getComputerChoice().toLowerCase();
-    playRound(playerSelection, computerSelection);
+    let playerSelection = 'paper';
+    playRound(playerSelection);
 });
 
 const scissors = document.getElementById('scissors');
+
 scissors.addEventListener('click', function() {
-    playerSelection = 'scissors';
-    let computerSelection = getComputerChoice().toLowerCase();
-    playRound(playerSelection, computerSelection);
+    let playerSelection = 'scissors';
+    playRound(playerSelection);
 });
 
 function getComputerChoice() {
-    const gameChoices = ['Rock', 'Paper', 'Scissors'];
+    const gameChoices = ['rock', 'paper', 'scissors'];
     return gameChoices[Math.floor(Math.random() * gameChoices.length)];
 };
+
+
+
 let playerWins = 0;
 let computerWins = 0;
 
-let playerSelection ='';
 
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection){
-        return `It's a draw. Score is ${playerWins} to ${computerWins}.`
+const playerScore = document.querySelector('.playerScore');
+const computerScore = document.querySelector('.computerScore');
+
+const result = document.querySelector('.resultText');
+
+function playRound(playerSelection) {
+    let computerSelection = getComputerChoice();
+    if (playerSelection == computerSelection){
+        result.textContent = "It's a draw."
     }
-    else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+    else if (playerSelection == 'rock' && computerSelection == 'scissors') {
         ++playerWins;
-        return `You win! Rock beats scissors. Score is ${playerWins} to ${computerWins}.`
+        playerScore.textContent = playerWins;
+        result.textContent = "You win! Rock beats scissors."
     }
-    else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+    else if (playerSelection == 'scissors' && computerSelection == 'paper') {
         ++playerWins;
-        return `You win! Scissors beats paper. Score is ${playerWins} to ${computerWins}.`
+        playerScore.textContent = playerWins;
+        result.textContent = "You win! Scissors beats paper."
     }
-    else if (playerSelection === 'rock' && computerSelection === 'paper') {
+    else if (playerSelection == 'rock' && computerSelection == 'paper') {
         ++computerWins;
-        return `You lose! Paper beats rock. Score is ${playerWins} to ${computerWins}.`
+        computerScore.textContent = computerWins;
+        result.textContent = "You lose! Paper beats rock."
     }
-    else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+    else if (playerSelection == 'scissors' && computerSelection == 'rock') {
         ++computerWins;
-        return `You lose! Rock beats scissors. Score is ${playerWins} to ${computerWins}.`
+        computerScore.textContent = computerWins;
+        result.textContent = "You lose! Rock beats scissors."
     }
-    else if (playerSelection === 'paper' && computerSelection === 'rock') {
+    else if (playerSelection == 'paper' && computerSelection == 'rock') {
         ++playerWins;
-        return `You win! Paper beats rock. Score is ${playerWins} to ${computerWins}.`
+        playerScore.textContent = playerWins;
+        result.textContent = "You win! Paper beats rock."
     }
-    else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+    else if (playerSelection == 'paper' && computerSelection == 'scissors') {
         computerWins++;
-        return `You lose! Scissors beats paper. Score is ${playerWins} to ${computerWins}.`
-    }   
-    
+        computerScore.textContent = computerWins;
+        result.textContent = "You lose! Scissors beats paper."
+    }  
 };
+
+
 
 function game() {
         console.log(playRound(i));
