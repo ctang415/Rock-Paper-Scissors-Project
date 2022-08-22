@@ -36,7 +36,7 @@ const playerScore = document.querySelector('.playerScore');
 const computerScore = document.querySelector('.computerScore');
 
 const result = document.querySelector('.resultText');
-
+document.getElementById('reset').style.visibility='hidden';
 function playRound(playerSelection) {
     let computerSelection = getComputerChoice();
     if (playerSelection == computerSelection){
@@ -77,12 +77,14 @@ function playRound(playerSelection) {
         document.querySelector('#paper').disabled = true;
         document.querySelector('#rock').disabled = true;
         document.querySelector('#scissors').disabled = true;
+        document.getElementById('reset').style.visibility='visible';
     }
     else if (computerWins === 5) {
         result.textContent = "Computer wins!"
         document.querySelector('#paper').disabled = true;
         document.querySelector('#rock').disabled = true;
         document.querySelector('#scissors').disabled = true;
+        document.getElementById('reset').style.visibility='visible';
     }
 };
 
