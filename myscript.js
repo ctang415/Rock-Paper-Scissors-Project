@@ -71,7 +71,14 @@ function playRound(playerSelection) {
         computerWins++;
         computerScore.textContent = computerWins;
         result.textContent = "You lose! Scissors beats paper."
-    }  
+    }
+    if (playerWins === 5) {
+        result.textContent = "You win!"
+    }
+    else if (computerWins === 5) {
+        result.textContent = "Computer wins!"
+
+    }
 };
 
 
@@ -94,5 +101,11 @@ function game() {
 
 function endGame() {
     computerWins = 0;
-    playerWins= 0;
+    playerWins = 0;
+    computerScore.textContent = 0;
+    playerScore.textContent= 0;
 };
+
+const reset = document.getElementById('reset');
+
+reset.addEventListener('click', endGame);
