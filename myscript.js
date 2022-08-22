@@ -36,7 +36,10 @@ const playerScore = document.querySelector('.playerScore');
 const computerScore = document.querySelector('.computerScore');
 
 const result = document.querySelector('.resultText');
+
+
 document.getElementById('reset').style.visibility='hidden';
+
 function playRound(playerSelection) {
     let computerSelection = getComputerChoice();
     if (playerSelection == computerSelection){
@@ -95,7 +98,7 @@ function endGame() {
     playerWins = 0;
     computerScore.textContent = 0;
     playerScore.textContent= 0;
-    result.textContent = ""
+    result.textContent = "Choose one"
     document.querySelector('#rock').disabled = false;
     document.querySelector('#paper').disabled = false;
     document.querySelector('#scissors').disabled = false;
