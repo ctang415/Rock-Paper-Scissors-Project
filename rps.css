@@ -1,16 +1,28 @@
+* {
+    font-size: 40px;
+}
+
 .header {
     display: flex;
     font-size: 60px;
     justify-content: center;
-    padding: 10px
+    padding: 30px
 
 }
 
-.score {
+.scoreC,
+.scoreP {
     display: flex;
     font-size: 40px;
-    justify-content: center;
-    padding: 5px;
+    padding: 10px;
+}
+
+.scoreP {
+    margin-left: 50px;
+}
+
+.scoreC {
+    margin-right: 20px;
 }
 
 .scores {
@@ -24,15 +36,16 @@
     display:flex;
     gap: 20px;
     justify-content: center;
-    padding: 10px;
+    padding: 20px;
 }
 
 #rock,
 #paper,
 #scissors {
     display: flex;
+    font-size: 25px;
     border-radius: 10px;
-    padding: 20px;
+    padding: 30px;
 }
 
 .resultText {
@@ -40,4 +53,16 @@
     font-size: 20px;
     justify-content: center;
     padding: 20px;
+}
+
+#reset {
+    display: flex;
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
 }
