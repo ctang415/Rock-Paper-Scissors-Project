@@ -90,22 +90,6 @@ function playRound(playerSelection) {
 
 
 
-function game() {
-        console.log(playRound(i));
-     if (playerWins > computerWins) {
-        console.log(`You won the game with ${playerWins}.`)
-        return endGame();
-    }
-    else if (computerWins > playerWins) {
-        console.log(`You lost the game. Computer wins with ${computerWins}.`)
-        return endGame();
-    }
-    else {
-        console.log(`No one wins the game. It's a tie at ${playerWins} for you and ${computerWins} for the computer.`)
-        return endGame();
-    }
-}
-
 function endGame() {
     computerWins = 0;
     playerWins = 0;
@@ -115,6 +99,7 @@ function endGame() {
     document.querySelector('#rock').disabled = false;
     document.querySelector('#paper').disabled = false;
     document.querySelector('#scissors').disabled = false;
+    document.getElementById('reset').style.visibility='hidden';
 };
 
 const reset = document.getElementById('reset');

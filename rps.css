@@ -17,6 +17,12 @@
     padding: 10px;
 }
 
+.playerScore,
+.computerScore {
+    border: solid;
+    padding: 30px
+}
+
 .scoreP {
     margin-left: 50px;
 }
